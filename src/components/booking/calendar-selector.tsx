@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Calendar } from "@/components/ui/calendar";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const API_URL = "https://gz6qco37n5grzols3x3blboh2m0vtgjn.lambda-url.ap-southeast-1.on.aws";
