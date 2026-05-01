@@ -8,9 +8,10 @@ from mangum import Mangum
 
 app = FastAPI()
 
+# Configured for ap-southeast-1 (Singapore)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # In production, restrict this to your frontend URL
+    allow_origins=["*"], 
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -54,5 +55,4 @@ def get_available_slots(date: str):
     available = [slot for slot in master_slots if slot not in booked_times]
     return {"available_slots": available}
 
-# The AWS Lambda entry point
 handler = Mangum(app)
