@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from fastapi.middleware.cors import CORSMiddleware
 import boto3
 from boto3.dynamodb.conditions import Attr
 import uuid
@@ -8,14 +7,7 @@ from mangum import Mangum
 
 app = FastAPI()
 
-# Configured for ap-southeast-1 (Singapore)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"], 
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
+# Database setup for Singapore region
 dynamodb = boto3.resource('dynamodb', region_name='ap-southeast-1')
 table = dynamodb.Table('AxiomBookings')
 
@@ -55,4 +47,5 @@ def get_available_slots(date: str):
     available = [slot for slot in master_slots if slot not in booked_times]
     return {"available_slots": available}
 
+# AWS Lambda Handler
 handler = Mangum(app)

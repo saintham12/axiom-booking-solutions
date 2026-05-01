@@ -8,7 +8,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    /* Essential for AWS Amplify Build */
+    /* Resolve Path Aliases for Amplify Build */
     "ignoreDeprecations": "5.0",
     "baseUrl": ".",
     "paths": {
