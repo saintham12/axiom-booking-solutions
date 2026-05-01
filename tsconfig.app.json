@@ -8,8 +8,8 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    /* Resolve Path Aliases for Amplify Build */
-    "ignoreDeprecations": "5.0",
+    /* Corrected for AWS Amplify Environment */
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
@@ -24,12 +24,11 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Linting */
+    /* Cleaned up Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noCheckUnknownDirectives": true
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src"]
 }
