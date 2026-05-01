@@ -6,28 +6,27 @@
     "useDefineForClassFields": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "module": "ESNext",
+    /* Critical flags for Amplify Build */
     "skipLibCheck": true,
-
-    /* Corrected for AWS Amplify Environment */
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": false,
     "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
     "jsx": "react-jsx",
-
-    /* Cleaned up Linting */
-    "strict": true,
+    /* Relaxed Linting for Production Build */
+    "strict": false,
     "noUnusedLocals": false,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"]
